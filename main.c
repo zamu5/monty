@@ -34,12 +34,14 @@ int main(int ac, char *av[])
 		else if (compare(buff, count) == -1)
 		{
 			fprintf(stderr, "L%i: unknown instruction %s\n", count, buff);
+			free(buff);
 			exit(EXIT_FAILURE);
 		}
 		count++;
 		red = getline(&buff, &len, fo);
 	}
 	fclose(fo);
+	free(buff);
 	readline(av[1]);
 	return (0);
 }

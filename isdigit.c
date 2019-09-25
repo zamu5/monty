@@ -18,3 +18,19 @@ int _isdigit(char *s)
 	}
 	return (1);
 }
+/**
+ * free_dlistint - free a list
+ * @head: head of the list
+ * Return: nothing
+ */
+void freeStack_t(stack_t *head)
+{
+	stack_t *copy;
+
+	while (head)
+	{
+		copy = head;
+		head = (*head).next;
+		free(copy);
+	}
+}
