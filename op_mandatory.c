@@ -63,7 +63,7 @@ void op_pchar(stack_t **head, unsigned int line)
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", line);
 		exit(EXIT_FAILURE);
 	}
-	if ((**head).n >= 0 && (**head).n < 256)
+	if ((**head).n >= 0 && (**head).n < 128)
 		putchar((**head).n), putchar('\n');
 	else
 	{
