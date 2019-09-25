@@ -40,7 +40,7 @@ void op_pint(stack_t **h, unsigned int line)
 {
 	if (*h == NULL)
 	{
-		fprintf(stderr, "L%ui: can't pint, stack empty\n", line);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line);
 		exit(EXIT_FAILURE);
 	}
 	while ((**h).prev != NULL)
@@ -60,14 +60,14 @@ void op_pchar(stack_t **head, unsigned int line)
 {
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%ui: can't pchar, stack empty\n", line);
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line);
 		exit(EXIT_FAILURE);
 	}
 	if ((**head).n >= 0 && (**head).n < 256)
 		putchar((**head).n), putchar('\n');
 	else
 	{
-		fprintf(stderr, "L%ui: can't pchar, value out of range\n", line);
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line);
 		exit(EXIT_FAILURE);
 	}
 }

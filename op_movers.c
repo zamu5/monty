@@ -13,7 +13,7 @@ void op_swap(stack_t **head, unsigned int line)
 
 	if (*head == NULL || (**head).next == NULL)
 	{
-		fprintf(stderr, "L%ui: can't swap, stack too short\n", line);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 	temp = (**head).n;
@@ -86,7 +86,7 @@ void op_pop(stack_t **head, unsigned int line)
 
 	if (*head == NULL || head == NULL)
 	{
-		fprintf(stderr, "L%ui: can't pop an empty stack\n", line);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line);
 		exit(EXIT_FAILURE);
 	}
 	copy = *head;
