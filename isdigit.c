@@ -12,7 +12,7 @@ int _isdigit(char *s)
 
 	while (s[i])
 	{
-		if(s[0] == 45)
+		if (s[0] == 45)
 			i++;
 		if (s[i] < 47 || s[i] > 58)
 			return (0);

@@ -29,8 +29,8 @@ int main(int ac, char *av[])
 	while (red >= 0)
 	{
 		spaces(buff);
-		if (buff[0] == '#')
-			continue;
+		if (buff[0] == '#' || buff[0] == '\n')
+			;
 		else if (compare(buff, count) == -1)
 		{
 			fprintf(stderr, "L%i: unknown instruction %s\n", count, buff);
