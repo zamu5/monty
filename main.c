@@ -37,6 +37,7 @@ int main(int ac, char *av[])
 			exit(EXIT_FAILURE);
 		}
 		count++;
+		red = getline(&buff, &len, fo);
 	}
 	fclose(fo);
 	readline(av[1]);
