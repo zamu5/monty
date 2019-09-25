@@ -6,6 +6,7 @@ int main(int ac, char *av[])
 	ssize_t red;
 	size_t len = 0;
 	int count = 1;
+	
 
 	if (ac != 2)
 	{
@@ -20,12 +21,16 @@ int main(int ac, char *av[])
 	while((red = getline(&buff, &len, fo)) >= 0)
 	{
 		spaces(buff);
-		if (compare(buff, count) == -1)
+		if (buff[0] == '#')
+			continue;
+		else if (compare(buff, count) == -1)
 		{
 			fprintf(stderr, "L%i: unknown instruction %s\n", count, buff);
 			exit(EXIT_FAILURE);
 		}
 		count++;
 	}
+	fclose(fo);
+	readline(av[1]);
 	return (0);
 }

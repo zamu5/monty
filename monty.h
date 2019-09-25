@@ -12,10 +12,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-void spaces(char *buffer);
-int compare(char *buff, int count);
-int _isdigit(char *s);
-
+int number;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -47,7 +44,29 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
-
+void spaces(char *buffer);
+int compare(char *buff, int count);
+int _isdigit(char *s);
+int readline(char *file);
+void op_push(stack_t **head, unsigned int line);
+void op_pall(stack_t **h, unsigned int line);
+void (*get_func(char *command, int))(stack_t **stack, unsigned int line_number);
+stack_t *add_dnodeint(stack_t **head, int n);
+size_t print_dlistint(const stack_t *h);
+void op_pint(stack_t **h, unsigned int line);
+void op_pop(stack_t **head, unsigned int line);
+void op_swap(stack_t **head, unsigned int line);
+void op_add(stack_t **head, unsigned int line);
+void op_nop(stack_t **head, unsigned int line);
+void op_sub(stack_t **head, unsigned int line);
+void op_div(stack_t **head, unsigned int line);
+void op_mul(stack_t **head, unsigned int line);
+void op_mod(stack_t **head, unsigned int line);
+void op_pchar(stack_t **head, unsigned int line);
+void op_pstr(stack_t **head, unsigned int line);
+void op_rotl(stack_t **head, unsigned int line);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
+void op_rotr(stack_t **head, unsigned int line);
+int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 
 #endif

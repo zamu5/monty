@@ -1,3 +1,4 @@
+#include "monty.h"
 /**
  * spaces - remove the spaces at the begining of the buffer
  * @buffer: buffer
