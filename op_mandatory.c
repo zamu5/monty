@@ -2,8 +2,8 @@
 /**
  * op_push - add a new node at the begining of a list
  * @head: head of the list
- * @n: value of the new node
- * Return: the adrres of the new node
+ * @line: line
+ * Return: nothing
  */
 void op_push(stack_t **head, unsigned int line)
 {
@@ -22,7 +22,7 @@ void op_push(stack_t **head, unsigned int line)
 /**
  * op_pall - print a list
  * @h: head of the list
- * @line: line of opcode
+ * @line: line
  * Return: nothing
  */
 void op_pall(stack_t **h, unsigned int line)
@@ -31,9 +31,10 @@ void op_pall(stack_t **h, unsigned int line)
 	print_dlistint(*h);
 }
 /**
- * print_dlistint - print a list
+ * op_pint - print the first element of a list
  * @h: head of the list
- * Return: the number of nodes
+ * @line: line
+ * Return: nothing
  */
 void op_pint(stack_t **h, unsigned int line)
 {
@@ -47,16 +48,22 @@ void op_pint(stack_t **h, unsigned int line)
 	if (*h != NULL)
 	{
 		printf("%d\n", (**h).n);
-      	}
+	}
 }
+/**
+ * op_pchar - print the ascii value of the top of a list
+ * @head: head of the list
+ * @line: line
+ * Return: nothing
+ */
 void op_pchar(stack_t **head, unsigned int line)
 {
-	if(*head == NULL)
+	if (*head == NULL)
 	{
 		fprintf(stderr, "L%ui: can't pchar, stack empty\n", line);
 		exit(EXIT_FAILURE);
 	}
-	if((**head).n >= 0 && (**head).n < 256)
+	if ((**head).n >= 0 && (**head).n < 256)
 		putchar((**head).n), putchar('\n');
 	else
 	{
@@ -64,17 +71,23 @@ void op_pchar(stack_t **head, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 }
+/**
+ * op_pstr - print the ascii values of a list
+ * @head: head of the list
+ * @line: line
+ * Return: nothing
+ */
 void op_pstr(stack_t **head, unsigned int line)
 {
 	(void)line;
-	if(*head == NULL)
+	if (*head == NULL)
 	{
 		putchar('\n');
 		return;
 	}
-	while(*head)
+	while (*head)
 	{
-		if((**head).n <= 0 || (**head).n > 255)
+		if ((**head).n <= 0 || (**head).n > 255)
 			break;
 		putchar((**head).n);
 		*head = (**head).next;

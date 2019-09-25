@@ -1,4 +1,9 @@
 #include "monty.h"
+/**
+ * readline - read each line and execute the opcode
+ * @file: file with the opcodes
+ * Return: 0 in fail
+ */
 int readline(char *file)
 {
 	FILE *fo;
@@ -10,7 +15,7 @@ int readline(char *file)
 	stack_t *list = NULL;
 
 	fo = fopen(file, "r");
-	while((red = getline(&buff, &len, fo)) >= 0)
+	while ((red = getline(&buff, &len, fo)) >= 0)
 	{
 		spaces(buff);
 		if (buff[0] == '#')
@@ -22,11 +27,11 @@ int readline(char *file)
 				number = atoi(strtok(NULL, " \n"));
 			test = get_func(token, count);
 			if (test == NULL)
-				return(0);
+				return (0);
 			test(&list, count);
 		}
 		count++;
 
 	}
-	return(0);
+	return (0);
 }

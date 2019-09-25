@@ -25,9 +25,10 @@ int number;
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -40,8 +41,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 void spaces(char *buffer);
@@ -50,7 +51,7 @@ int _isdigit(char *s);
 int readline(char *file);
 void op_push(stack_t **head, unsigned int line);
 void op_pall(stack_t **h, unsigned int line);
-void (*get_func(char *command, int))(stack_t **stack, unsigned int line_number);
+void (*get_func(char *, int))(stack_t **stack, unsigned int);
 stack_t *add_dnodeint(stack_t **head, int n);
 size_t print_dlistint(const stack_t *h);
 void op_pint(stack_t **h, unsigned int line);
