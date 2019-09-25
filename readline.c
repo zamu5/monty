@@ -18,8 +18,8 @@ int readline(char *file)
 	while ((red = getline(&buff, &len, fo)) >= 0)
 	{
 		spaces(buff);
-		if (buff[0] == '#')
-			continue;
+		if (buff[0] == '#' || buff[0] == '\n')
+			;
 		else
 		{
 			token = strtok(buff, " \n");
