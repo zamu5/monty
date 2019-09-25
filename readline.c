@@ -33,5 +33,8 @@ int readline(char *file)
 		count++;
 
 	}
+	fclose(fo);
+	free(buff);
+	freeStack_t(list);
 	return (0);
 }
