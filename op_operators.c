@@ -49,7 +49,7 @@ void op_div(stack_t **head, unsigned int line)
 {
 	if (*head == NULL || (**head).next == NULL)
 	{
-		fprintf(stderr, "L%u: can't sub, stack too short\n", line);
+		fprintf(stderr, "L%u: can't div, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 	if ((**head).n == 0)
