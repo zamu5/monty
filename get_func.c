@@ -1,5 +1,14 @@
 #include "monty.h"
-void (*get_func(char *token, int line))(stack_t **stack, unsigned int line_number)
+/**
+ * get_func - receives an op_code and checks if is a know op_code
+ *
+ * @token: string to check if is a op_code
+ * @line_number: line number in the file where the string is present
+ *
+ * Return: nothing
+ */
+void (*get_func(char *token, int line))(stack_t **stack,
+					unsigned int line_number)
 {
 	instruction_t opcode[] = {
 		{"push", op_push},
@@ -26,7 +35,7 @@ void (*get_func(char *token, int line))(stack_t **stack, unsigned int line_numbe
 	(void)line;
 	while (opcode[i].opcode != NULL)
 	{
-		if(strcmp(opcode[i].opcode, token) == 0)
+		if (strcmp(opcode[i].opcode, token) == 0)
 		{
 			return (opcode[i].f);
 		}
