@@ -23,6 +23,11 @@ int compare(char *buff, int count)
 			if (strcmp(token, "push") == 0)
 			{
 				token = strtok(NULL, " \n");
+				if (!token)
+				{
+					fprintf(stderr, "L%i: usage: push integer\n", count);
+					exit(EXIT_FAILURE);
+				}
 				result = _isdigit(token);
 				if (result == 0)
 				{

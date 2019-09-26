@@ -29,10 +29,7 @@ int readline(char *file)
 		else
 		{
 			token = strtok(buff1, " \n");
-			if (strcmp(token, "queue") == 0)
-				flag = 1;
-			if (strcmp(token, "stack") == 0)
-				flag = 0;
+			flag = mode(token, flag);
 			if (strcmp(token, "push") == 0)
 				number = atoi(strtok(NULL, " \n"));
 			if (flag && strcmp(token, "push") == 0)
@@ -46,4 +43,12 @@ int readline(char *file)
 	}
 	fclose(fo), free(buff), freeStack_t(list);
 	return (0);
+}
+int mode(char *token, int flag)
+{
+	if (strcmp(token, "queue") == 0)
+		flag = 1;
+	if (strcmp(token, "stack") == 0)
+		flag = 0;
+	return (flag);
 }
