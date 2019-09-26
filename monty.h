@@ -72,5 +72,6 @@ stack_t *add_dnodeint_end(stack_t **head, const int n);
 void op_rotr(stack_t **head, unsigned int line);
 int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 void freeStack_t(stack_t *head);
+int mode(char *token, int flag);
 
 #endif
