@@ -36,3 +36,32 @@ void freeStack_t(stack_t *head)
 		free(copy);
 	}
 }
+/**
+ * op_push1 - add a new node at the begining of a list
+ * @head: head of the list
+ * @line: line
+ * Return: nothing
+ */
+void op_push1(stack_t **head, unsigned int line)
+{
+	stack_t *new, *copy;
+
+	(void)line;
+	copy = *head;
+	if (head == NULL)
+		return;
+	new = malloc(sizeof(stack_t));
+	if (!new)
+		return;
+	(*new).n = number;
+	(*new).next = NULL;
+	if (copy == NULL)
+		(*new).prev = copy, *head = new;
+	else
+	{
+		while ((*copy).next != NULL)
+			copy = (*copy).next;
+		(*new).prev = copy;
+		(*copy).next = new;
+	}
+}
