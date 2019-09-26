@@ -32,6 +32,8 @@ void op_rotl(stack_t **head, unsigned int line)
 {
 	int temp;
 
+	if (*head == NULL)
+		return;
 	temp = (**head).n;
 	add_dnodeint_end(head, temp);
 	op_pop(head, line);
@@ -49,6 +51,8 @@ void op_rotr(stack_t **head, unsigned int line)
 	int i = 1;
 	stack_t *copy;
 
+	if (*head == NULL)
+		return;
 	copy = *head;
 	while ((*copy).next != NULL)
 	{
