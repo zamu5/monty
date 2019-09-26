@@ -12,6 +12,7 @@ void (*get_func(char *token, int line))(stack_t **stack,
 {
 	instruction_t opcode[] = {
 		{"push", op_push},
+		{"push1", op_push1},
 		{"pall", op_pall},
 		{"pint", op_pint},
 		{"pop", op_pop},

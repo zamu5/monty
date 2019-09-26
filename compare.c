@@ -9,9 +9,9 @@
  */
 int compare(char *buff, int count)
 {
-	char *data[16] = {"push", "pall", "pint", "pop", "swap", "add", "nop",
+	char *data[18] = {"push", "pall", "pint", "pop", "swap", "add", "nop",
 			 "sub", "div", "mul", "mod", "pchar", "pstr", "rotl",
-			 "rotr", NULL};
+			  "rotr", "stack", "queue", NULL};
 	char *token;
 	int i = 0, result;
 
