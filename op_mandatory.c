@@ -79,18 +79,21 @@ void op_pchar(stack_t **head, unsigned int line)
  */
 void op_pstr(stack_t **head, unsigned int line)
 {
+	stack_t *copy;
+
+	copy = *head;
 	(void)line;
 	if (*head == NULL)
 	{
 		putchar('\n');
 		return;
 	}
-	while (*head)
+	while (copy)
 	{
-		if ((**head).n <= 0 || (**head).n > 127)
+		if ((*copy).n <= 0 || (*copy).n > 127)
 			break;
-		putchar((**head).n);
-		*head = (**head).next;
+		putchar((*copy).n);
+		copy = (*copy).next;
 	}
 	putchar('\n');
 }
