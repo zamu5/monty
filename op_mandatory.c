@@ -87,7 +87,7 @@ void op_pstr(stack_t **head, unsigned int line)
 	}
 	while (*head)
 	{
-		if ((**head).n <= 0 || (**head).n > 255)
+		if ((**head).n <= 0 || (**head).n > 127)
 			break;
 		putchar((**head).n);
 		*head = (**head).next;
