@@ -44,6 +44,12 @@ int readline(char *file)
 	fclose(fo), free(buff), freeStack_t(list);
 	return (0);
 }
+/**
+ * mode - switch the operation mode
+ * @token: mode
+ * @flag: mode
+ * Return: nothing
+ */
 int mode(char *token, int flag)
 {
 	if (strcmp(token, "queue") == 0)

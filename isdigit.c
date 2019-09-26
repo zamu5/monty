@@ -10,10 +10,10 @@ int _isdigit(char *s)
 {
 	int i = 0;
 
+	if (s[0] == 45)
+		i++;
 	while (s[i])
 	{
-		if (s[0] == 45)
-			i++;
 		if (s[i] < 47 || s[i] > 58)
 			return (0);
 		i++;
