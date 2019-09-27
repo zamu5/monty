@@ -16,3 +16,4 @@
 ## pstr
 ## rotl
 ## rotr
+## stack
