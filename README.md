@@ -1,3 +1,4 @@
 # monty
 ## interpreter
 ## push
+## pall
