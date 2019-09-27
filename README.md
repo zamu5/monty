@@ -7,3 +7,4 @@
 ## swap
 ## add
 ## nop
+## sub
