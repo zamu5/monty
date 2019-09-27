@@ -9,3 +9,4 @@
 ## nop
 ## sub
 ## div
+## mul
