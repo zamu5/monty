@@ -17,3 +17,4 @@
 ## rotl
 ## rotr
 ## stack
+## queue
