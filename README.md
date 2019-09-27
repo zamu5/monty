@@ -15,3 +15,4 @@
 ## pchar
 ## pstr
 ## rotl
+## rotr
